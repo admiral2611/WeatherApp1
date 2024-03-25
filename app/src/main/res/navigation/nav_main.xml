@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeScreen">
+
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.admiral26.weatherapp1.ui.home.HomeScreen"
+        android:label="screen_home"
+        tools:layout="@layout/screen_home" >
+        <action
+            android:id="@+id/action_homeScreen_to_forecastScreen"
+            app:destination="@id/forecastScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/forecastScreen"
+        android:name="com.admiral26.weatherapp1.ui.forecast.ForecastScreen"
+        android:label="screen_forecast"
+        tools:layout="@layout/screen_forecast" >
+        <argument
+            android:name="lat"
+            app:argType="string" />
+        <argument
+            android:name="lon"
+            app:argType="string" />
+    </fragment>
+</navigation>
