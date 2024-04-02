@@ -8,12 +8,15 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.location.LocationManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -21,14 +24,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.admiral26.weatherapp1.R
-import com.admiral26.weatherapp1.R.color.white
 import com.admiral26.weatherapp1.core.adapter.HorizontalViewAdapter
 import com.admiral26.weatherapp1.core.base.BaseFragment
-import com.admiral26.weatherapp1.core.model.forecast.Hour
 import com.admiral26.weatherapp1.databinding.ScreenHomeBinding
 import com.admiral26.weatherapp1.util.iconWeather
 import com.google.android.gms.common.api.ResolvableApiException
-import dagger.hilt.android.AndroidEntryPoint
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
@@ -37,6 +37,7 @@ import com.google.android.gms.location.LocationSettingsResponse
 import com.google.android.gms.location.SettingsClient
 import com.google.android.gms.tasks.Task
 import com.tozny.crypto.android.BuildConfig
+import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
@@ -52,6 +53,7 @@ class HomeScreen : BaseFragment(R.layout.screen_home) {
         check()
         observe()
         setAdapter()
+
 
     }
 

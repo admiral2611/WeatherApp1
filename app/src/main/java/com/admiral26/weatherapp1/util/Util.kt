@@ -18,7 +18,7 @@ fun ImageView.iconWeather(url: String) {
 fun extractTimeFromString(dateTimeString: String): String {
     return try {
         val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm", Locale.getDefault())
-        val outputFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val date = inputFormat.parse(dateTimeString)
         outputFormat.format(date!!)
     } catch (e: Exception) {
